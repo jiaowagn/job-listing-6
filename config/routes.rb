@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :jobs do
-    resources :resumes 
+    resources :resumes
   end
 
   namespace :admin do
@@ -11,6 +11,8 @@ Rails.application.routes.draw do
         post :hide
         post :publish
       end
+
+      resources :resumes 
     end
   end
 
