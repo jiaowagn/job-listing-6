@@ -1,0 +1,8 @@
+<h1><%= @job.title %> - 投交履历</h1>
+
+<%= simple_form_for [@job, @resume] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :attachment %>
+
+  <%= f.submit "送出" %>
+<% end %>

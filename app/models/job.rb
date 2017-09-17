@@ -2,6 +2,8 @@ class Job < ApplicationRecord
   validates_presence_of :title, :wage_lower_bound, :wage_upper_bound
   validates :wage_lower_bound, numericality: { greater_than: 0}
 
+  has_many :resumes 
+
   scope :published, -> {where(is_hidden: false)}
   scope :recent, -> {order("created_at DESC")}
 
